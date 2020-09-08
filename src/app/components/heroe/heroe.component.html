@@ -1,0 +1,24 @@
+<h1 class="animated fadeIn fast">{{ heroe.nombre | uppercase }}    <small>{{ heroe.aparicion | date:'y' }}</small></h1>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img [src]="heroe.img" class="img-fluid" alt="heroe.nombre">
+        <br><br>
+        <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block"> Regresar.. </a>
+    </div>
+    
+    <div class="col-md-8">
+        <br>
+        <h3>Biografia de: {{ heroe.nombre }}</h3>
+        <hr>
+        <p>
+            {{ heroe.bio }}
+        </p>
+        <div>
+            <!-- <img class="logoImg" src="assets/img/{{ heroe.casa }}.png" alt="heroe.casa"> -->
+
+            <img *ngIf="heroe.casa == 'Marvel'" class="logoImg" src="assets/img/Marvel.png" alt="heroe.casa">
+            <img *ngIf="heroe.casa == 'DC'" class="logoImg" src="assets/img/DC.png" alt="heroe.casa">
+        </div>
+    </div>
+</div>

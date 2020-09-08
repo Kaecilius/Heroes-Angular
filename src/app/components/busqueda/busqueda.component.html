@@ -1,0 +1,12 @@
+<h1>Héroes <small>Marvel y DC </small> </h1>
+<hr>
+<h1> Buscando:  {{terminoBusqueda}} </h1>
+  <div *ngIf="!busqueda" class="alert alert-danger" role="alert">
+    No se encontraron resultados con: {{ terminoBusqueda }}
+  </div>
+  <div *ngIf="busqueda"class="alert alert-success" role="alert">
+    Elementos encontrados: {{ tamanioBusqueda }}
+  </div>
+<div class="card-columns">
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index] = "heroe.idx" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+</div>
